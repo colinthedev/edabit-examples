@@ -262,3 +262,143 @@ function createID(firstname, lastname) {
 
     return `${lowerFirstName}${upperLastName}${lowerLastName}`
 }
+
+// ------------------------------------------------------------
+
+// Write a function that stutters a word as if someone is struggling to read it.The first two letters are repeated twice with an ellipsis ...and space after each, and then the word is pronounced with a question mark?.
+
+//     Examples
+// stutter("incredible") ➞ "in... in... incredible?"
+
+// stutter("enthusiastic") ➞ "en... en... enthusiastic?"
+
+// stutter("outstanding") ➞ "ou... ou... outstanding?"
+
+function stutter(word) {
+    let firstTwo = word.slice(0, 2);
+    return `${firstTwo}... ${firstTwo}... ${word}?`
+}
+
+// ------------------------------------------------------------
+
+// Write a function that takes an integer minutes and converts it to seconds.
+
+//     Examples
+// convert(5) ➞ 300
+
+// convert(3) ➞ 180
+
+// convert(2) ➞ 120
+
+function convert(minutes) {
+    return minutes * 60;
+}
+
+// ------------------------------------------------------------
+
+// Mubashir created an infinite loop! Help him by fixing the code in the code tab to pass this challenge.Look at the examples below to get an idea of what the function should do.
+
+//     Examples
+// printArray(1) ➞[1]
+
+// printArray(3) ➞[1, 2, 3]
+
+// printArray(6) ➞[1, 2, 3, 4, 5, 6]
+
+function printArray(number) {
+    var newArray = [];
+
+    for (var i = 1; i <= number; i++) {
+        newArray.push(i);
+    }
+
+    return newArray;
+}
+
+// ------------------------------------------------------------
+
+// Get sum of all nums in array
+// Get the num of index in array
+// Divide total by num of index
+
+function mean(arr) {
+    let total = arr.reduce((a, b) => a + b, 0);
+    let numIndex = arr.length;
+    let average = total / numIndex;
+    return Math.round(average * 100) / 100
+}
+
+// ------------------------------------------------------------
+
+// You will need to write three unfinished logic gates.Continue to write the three logic gates: AND, OR, and NOT.
+
+//     Examples
+// AND(1, 1) ➞ 1
+// AND(0, 0) ➞ 0
+
+// OR(1, 0) ➞ 1
+// OR(1, 1) ➞ 1
+
+// NOT(0) ➞ 1
+// NOT(1) ➞ 0
+
+function NOT(n) {
+    let one = 1
+    let zero = 0
+    return n === one ? zero : one
+}
+
+function AND(a, b) {
+    return a && b
+}
+
+function OR(a, b) {
+    return a || b
+}
+
+// ------------------------------------------------------------
+
+// Write a function that takes the last number of a consecutive list of numbers and returns the total of all numbers up to and including it.
+
+//     Examples
+// addUpTo(3) ➞ 6
+// // 1 + 2 + 3 = 6
+
+// addUpTo(10) ➞ 55
+// // 1 + 2 + 3 + ... + 10 = 55
+
+// addUpTo(7) ➞ 28
+// // 1 + 2 + 3 + ... + 7 = 28
+
+// Loop starting at 0 check if lessthan or equal to n
+// keep adding and storing in totalNum until reaches n 
+
+function addUpTo(n) {
+    totalNum = 0
+    for (i = 0; i <= n; i++) {
+        totalNum += i
+    }
+    return totalNum
+}
+
+// ------------------------------------------------------------
+
+// Given a number and an object with min and max properties, return true if the number lies within the given range(inclusive).
+
+//     Examples
+// isInRange(4, { min: 0, max: 5 }) ➞ true
+
+// isInRange(4, { min: 4, max: 5 }) ➞ true
+
+// isInRange(4, { min: 6, max: 10 }) ➞ false
+
+// isInRange(5, { min: 5, max: 5 }) ➞ true
+// Notes
+// Numbers can be positive or negative, and they may not be integers.
+// You can assume min <= max is always true.
+
+function isInRange(num, range) {
+    return num >= range.min && num <= range.max ? true : false
+}
+
+// ------------------------------------------------------------
