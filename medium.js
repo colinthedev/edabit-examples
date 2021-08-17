@@ -116,3 +116,51 @@ function assignPersonToJob(names, jobs) {
 }
 
 // ------------------------------------------------------------
+
+// Write a function that converts an object into an array, where each element represents a key - value pair in the form of an array.
+
+//     Examples
+// toArray({ a: 1, b: 2 }) ➞[["a", 1], ["b", 2]]
+
+// toArray({ shrimp: 15, tots: 12 }) ➞[["shrimp", 15], ["tots", 12]]
+
+// toArray({}) ➞[]
+
+let toArray = obj => Object.entries(obj)
+
+// ------------------------------------------------------------
+
+// Create a function that moves all capital letters to the front of a word.
+
+//     Examples
+// capToFront("hApPy") ➞ "APhpy"
+
+// capToFront("moveMENT") ➞ "MENTmove"
+
+// capToFront("shOrtCAKE") ➞ "OCAKEshrt"
+
+// loop over if capital move to front
+
+function capToFront(s) {
+    let split = s.split('') // split each character to loop through and join back in return
+    let cap = [] // store capital letters
+    let lower = [] // store lowercase letters
+    for (i = 0; i < split.length; i++) {
+        if (split[i] == split[i].toUpperCase()) {
+            cap.push(split[i]) // if uppercase push letter to cap array
+        }
+        else if (split[i] == split[i].toLowerCase()) {
+            lower.push(split[i]) // if lowercase push letter to lower array
+        }
+    }
+    // join split letters back together return capital letters first then lower
+    return cap.join('').concat(lower.join(''))
+}
+
+// ------------------------------------------------------------
+
+function secondLargest(arr) {
+    let sortedArr = arr.sort((a, b) => a - b)
+    return sortedArr.splice(-2, 1)
+}
+
