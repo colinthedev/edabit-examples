@@ -159,8 +159,91 @@ function capToFront(s) {
 
 // ------------------------------------------------------------
 
+// Create a function that takes an array of numbers and return both the minimum and maximum numbers, in that order.
+
+//     Examples
+// minMax([1, 2, 3, 4, 5]) ➞[1, 5]
+
+// minMax([2334454, 5]) ➞[5, 2334454]
+
+// minMax([1]) ➞[1, 1]
+
 function secondLargest(arr) {
     let sortedArr = arr.sort((a, b) => a - b)
     return sortedArr.splice(-2, 1)
 }
 
+function minMax(arr) {
+    let sortedArr = arr.sort((a, b) => a - b)
+    let first = sortedArr.slice(0, 1)
+    let last = sortedArr.slice(-1)
+    return arr = [...first, ...last]
+}
+
+// ------------------------------------------------------------
+
+// Given three arguments ⁠— an object obj of the stolen items, the pets name and a value ⁠— return an object with that name and value in it(as key - value pairs).
+
+//     Examples
+// addName({}, "Brutus", 300) ➞ { Brutus: 300 }
+
+// addName({ piano: 500 }, "Brutus", 400) ➞ { piano: 500, Brutus: 400 }
+
+// addName({ piano: 500, stereo: 300 }, "Caligula", 440) ➞ { piano: 500, stereo: 300, Caligula: 440 }
+
+function addName(obj, name, value) {
+    obj[name] = value
+    return obj
+}
+
+// ------------------------------------------------------------
+
+// Given a total due and an array representing the amount of change in your pocket, determine whether or not you are able to pay for the item.Change will always be represented in the following order: quarters, dimes, nickels, pennies.
+
+// To illustrate: changeEnough([25, 20, 5, 0], 4.25) should yield true, since having 25 quarters, 20 dimes, 5 nickels and 0 pennies gives you 6.25 + 2 + .25 + 0 = 8.50.
+
+//     Examples
+// changeEnough([2, 100, 0, 0], 14.11) ➞ false
+
+// changeEnough([0, 0, 20, 5], 0.75) ➞ true
+
+// changeEnough([30, 40, 20, 5], 12.55) ➞ true
+
+// changeEnough([10, 0, 0, 50], 3.85) ➞ false
+
+// changeEnough([1, 0, 5, 219], 19.99) ➞ false
+
+function changeEnough(change, amountDue) {
+    let [q, d, n, p] = [0.25, 0.10, 0.05, 0.01]
+    let quarters = change[0] * q
+    let dimes = change[1] * d
+    let nickles = change[2] * n
+    let pennys = change[3] * p
+    return quarters + dimes + nickles + pennys >= amountDue ? true
+        : false
+}
+
+// ------------------------------------------------------------
+
+// Create a function that squares every digit of a number.
+
+//     Examples
+// squareDigits(9119) ➞ 811181
+
+// squareDigits(2483) ➞ 416649
+
+// squareDigits(3212) ➞ 9414
+
+function squareDigits(n) {
+    let squared = n.toString().split('').map(i => i * i).join('')
+    return Number(squared)
+}
+
+// ------------------------------------------------------------
+
+function ascDesNone(arr, str) {
+    let [a, b] = arr
+    return str === "Asc" ? arr.sort((a, b) => a - b)
+        : str === "Des" ? arr.reverse()
+            : arr
+}
