@@ -277,3 +277,131 @@ function whichIsLarger(f, g) {
 }
 
 // ------------------------------------------------------------
+
+// Create a function that takes a number as an argument and returns the appropriate error message.You should do this without using the switch or if statements.
+
+// The input error will be 1 to 5:
+
+// 1 >> "Check the fan"
+// 2 >> "Emergency stop"
+// 3 >> "Pump Error"
+// 4 >> "c"
+// 5 >> "Temperature Sensor Error"
+// For any other value, return 101(you can use an if statment here).
+
+function error(n) {
+    return n === 1 ? 'Check the fan: e1'
+        : n === 2 ? 'Emergency stop: e2'
+            : n === 3 ? 'Pump Error: e3'
+                : n === 4 ? 'c: e4'
+                    : n === 5 ? 'Temperature Sensor Error: e5'
+                        : 101
+}
+
+// ------------------------------------------------------------
+
+// Create a function that takes a 2D array arr returns the sum of the minimum value in each row.
+
+//     Examples
+// sumMinimums([
+//     [1, 2, 3, 4, 5],
+//     [5, 6, 7, 8, 9],
+//     [20, 21, 34, 56, 100]
+// ]➞ 26
+
+// minimum value of the first row is 1
+// minimum value of the second row is 5
+// minimum value of the third row is 20
+
+function sumMinimums(arr) {
+    let minVals = arr.map(item => Math.min(...item))
+    return minVals.reduce((a, b) => a + b)
+}
+
+// ------------------------------------------------------------
+
+// You will be given an array of drinks, with each drink being an object with two properties: name and price.Create a function that has the drinks array as an argument and return the drinks objects sorted by price in ascending order.
+
+// Assume that the following array of drink objects needs to be sorted:
+
+// drinks = [
+//     { name: "lemonade", price: 50 },
+//     { name: "lime", price: 10 }
+// ]
+// The output of the sorted drinks object will be:
+
+// Examples
+// sortDrinkByPrice(drinks) ➞[{ name: "lime", price: 10 }, { name: "lemonade", price: 50 }]
+
+function sortDrinkByPrice(drinks) {
+    return drinks.sort((a, b) => (a.price > b.price) ? 1 : -1)
+}
+
+// ------------------------------------------------------------
+
+// Create a function that takes an array of non - negative integers and strings and return a new array without the strings.
+
+//     Examples
+// filterArray([1, 2, "a", "b"]) ➞[1, 2]
+
+// filterArray([1, "a", "b", 0, 15]) ➞[1, 0, 15]
+
+// filterArray([1, 2, "aasf", "1", "123", 123]) ➞[1, 2, 123]
+
+function filterArray(arr) {
+    return arr.filter(Number.isInteger)
+}
+
+// ------------------------------------------------------------
+
+// spelling("happy") ➞["h", "ha", "hap", "happ", "happy"]
+
+// spelling("eagerly") ➞["e", "ea", "eag", "eage", "eager", "eagerl", "eagerly"]
+
+function spelling(str) {
+    return str.split('').map((el, i) => str.slice(0, i + 1))
+}
+
+// ------------------------------------------------------------
+
+// Create a recursive function that takes two parameters and repeats the string n number of times.The first parameter txt is the string to be repeated and the second parameter is the number of times the string is to be repeated.
+
+//     String.prototype.repeat() is not allowed
+
+// Examples
+// repetition("ab", 3) ➞ "ababab"
+
+// repetition("kiwi", 1) ➞ "kiwi"
+
+// repetition("cherry", 2) ➞ "cherrycherry"
+
+function repetition(txt, n) {
+    let repeatedTxt = ''
+    while (n > 0) {
+        repeatedTxt += txt
+        n--
+    }
+    return repeatedTxt
+}
+
+// ------------------------------------------------------------
+
+// Create a function that takes an array of strings and return an array, sorted from shortest to longest.
+
+//     Examples
+// sortByLength(["Google", "Apple", "Microsoft"])
+// ➞["Apple", "Google", "Microsoft"]
+
+// sortByLength(["Leonardo", "Michelangelo", "Raphael", "Donatello"])
+// ➞["Raphael", "Leonardo", "Donatello", "Michelangelo"]
+
+// sortByLength(["Turing", "Einstein", "Jung"])
+// ➞["Jung", "Turing", "Einstein"]
+
+function sortByLength(arr) {
+    return arr.sort((a, b) => (a.length > b.length) ? 1 : -1)
+}
+
+// ------------------------------------------------------------
+
+

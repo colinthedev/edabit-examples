@@ -247,3 +247,44 @@ function ascDesNone(arr, str) {
         : str === "Des" ? arr.reverse()
             : arr
 }
+
+// ------------------------------------------------------------
+
+// Create a function that will remove the letters "a", "b" and "c" from the given string and return the modified version.If the given string does not contain "a", "b", or "c", return null.
+
+//     Examples
+// removeABC("This might be a bit hard") ➞ "This might e  it hrd"
+
+// removeABC("hello world!") ➞ null
+
+// removeABC("") ➞ null
+
+function removeABC(str) {
+    let regex = /[abc]/g
+    let condition = str.replace(regex, '')
+    return str === condition ? null
+        : condition
+}
+
+// ------------------------------------------------------------
+
+// In this challenge you will be given an array similar to the following:
+
+// [[3], 4, [2], [5], 1, 6]
+// In words, elements of the array are either an integer or an array containing a single integer.We humans can clearly see that this array can reasonably be sorted according to "the content of the elements" as:
+
+// [1, [2], [3], 4, [5], 6]
+// Create a function that, given an array similar to the above, sorts the array according to the "content of the elements".
+
+function sortIt(arr) {
+    return arr.sort()
+}
+
+// ------------------------------------------------------------
+
+function isBoiling(temp) {
+    let fBoil = 212
+    let cBoil = 100
+    return temp >= fBoil && temp >= cBoil ? true
+        : false
+}

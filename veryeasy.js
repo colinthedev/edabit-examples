@@ -20,13 +20,6 @@ function operation(num1, num2) {
             : divided == twoFour ? "divided"
                 : multiply == twoFour ? "multiplied"
                     : null;
-
-    // Same as ternary 
-    if (add == twoFour) return "added"
-    if (sub == twoFour) return "subtracted"
-    if (divided == twoFour) return "divided"
-    if (multiply == twoFour) return "multiplied"
-    else return null
 }
 
 // ------------------------------------------------------------
@@ -327,3 +320,7 @@ function mean(arr) {
     let average = total / numIndex;
     return Math.round(average * 100) / 100
 }
+
+// ------------------------------------------------------------
+
+
