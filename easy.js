@@ -404,4 +404,161 @@ function sortByLength(arr) {
 
 // ------------------------------------------------------------
 
+const checkObj = {
+    oddNum: 1,
+    evenNum: 2,
+    foundNum: 5,
+    randomNum: 18
+};
 
+const objToArray = [];
+for (let val in checkObj) {
+    if (checkObj[val] >= 2) {
+        objToArray.push(checkObj[val])
+    }
+}
+console.log(objToArray)
+
+// ------------------------------------------------------------
+
+function subtractTwo(num) {
+    return num - 2;
+}
+
+function map(arr, callback) {
+    const finalArr = []
+
+    for (let i = 0; i < arr.length; i++) {
+        const updated = callback(arr[i])
+        finalArr.push(updated)
+    }
+    return finalArr
+}
+
+// Uncomment these to check your work!
+console.log(typeof subtractTwo); // should log: 'function'
+console.log(typeof map); // should log: 'function'
+console.log(map([3, 4, 5], subtractTwo)); // should log: [ 1, 2, 3 ]
+
+// ------------------------------------------------------------
+
+function forEach(arr, callback) {
+    // loop over arr += callback
+    for (let val in arr) {
+        val += callback
+    }
+}
+
+function map(arr, callback) {
+    const finalArr = []
+ 
+    const updated = forEach(arr[i])
+    finalArr.push(updated)
+    
+    return finalArr
+}
+
+// Uncomment these to check your work!
+console.log(typeof forEach); // should log: 'function'
+forEach(['a', 'b', 'c'], i => console.log(i)); // should log: 'a', 'b', 'c'
+console.log(typeof map); // should log: 'function'
+console.log(map([3, 4, 5], n => n - 2)); // should log: [1, 2, 3]
+
+
+const finalArr = []
+
+function forEach(arr, callback) {
+    return finalArr += callback;
+}
+
+function map(arr, callback) {
+
+    const updated = forEach(arr)
+    finalArr.push(updated)
+
+    return finalArr
+}
+
+// Uncomment these to check your work!
+console.log(typeof forEach); // should log: 'function'
+forEach(['a', 'b', 'c'], i => console.log(i)); // should log: 'a', 'b', 'c'
+console.log(typeof map); // should log: 'function'
+console.log(map([3, 4, 5], n => n - 2)); // should log: [1, 2, 3]
+
+// ------------------------------------------------------------
+
+function reduce(arr, callback, val) {
+    return arr.reduce((callback, val) => callback + val)
+}
+
+// Uncomment these to check your work!
+const nums = [4, 1, 3];
+const add = function (a, b) { return a + b; }
+console.log(reduce(nums, add, 0)); // should log 8
+
+// ------------------------------------------------------------
+
+// A strong Scottish accent makes every vowel similar to an "e", so you should replace every vowel with an "e".Additionally, it is being screamed, so it should be in block capitals.
+
+// Create a function that takes a string and returns a string.
+
+//     Examples
+// toScottishScreaming("hello world") ➞ "HELLE WERLD"
+
+// toScottishScreaming("Mr. Fox was very naughty") ➞ "MR. FEX WES VERY NEEGHTY"
+
+// toScottishScreaming("Butterflies are beautiful!") ➞ "BETTERFLEES ERE BEEETEFEL!"
+
+function toScottishScreaming(str) {
+    str = str.toLowerCase()
+    let vowel = { 'a': 'e', 'i': 'e', 'o': 'e', 'u': 'e' }
+    str = str.replace(/[aiou]/g, m => vowel[m])
+    return str.toUpperCase()
+}
+
+// ------------------------------------------------------------
+
+// Character recognition software often makes mistakes when documents(especially old ones written with a typewriter) are digitized.
+
+// Your task is to correct the errors in the digitized text.You only have to handle the following mistakes:
+
+// A is misinterpreted as 4
+// S is misinterpreted as 5
+// O is misinterpreted as 0
+// I is misinterpreted as 1
+// The test cases contain numbers only by mistake.
+
+//     Examples
+// keyboardMistakes("MUB45H1R") ➞ "MUBASHIR"
+
+// keyboardMistakes("DUBL1N") ➞ "DUBLIN"
+
+// keyboardMistakes("51NG4P0RE") ➞ "SINGAPORE"
+
+function keyboardMistakes(str) {
+    let correctedErrs = { '4': 'A', '5': 'S', '0': 'O', '1': 'I' }
+    return str.replace(/[4501]/g, e => correctedErrs[e])
+}
+
+// ------------------------------------------------------------
+
+// Write a function that takes a two - digit number and determines if it's the largest of two possible digit swaps.
+
+// To illustrate:
+
+// largestSwap(27) ➞ false
+
+// largestSwap(43) ➞ true
+
+function largestSwap(num) {
+    const reversedNum = parseFloat(num.
+        toString()
+        .split('')
+        .reverse()
+        .join(''))
+    
+    return num < reversedNum ? false
+        : true
+}
+
+// ------------------------------------------------------------
