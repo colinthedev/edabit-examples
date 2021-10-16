@@ -288,3 +288,111 @@ function isBoiling(temp) {
     return temp >= fBoil && temp >= cBoil ? true
         : false
 }
+
+// ------------------------------------------------------------
+
+// Create a function that takes in a number as a string n and returns the number without trailing and leading zeros.
+
+// Trailing Zeros are the zeros after a decimal point which don't affect the value (e.g. the last three zeros in 3.4000 and 3.04000).
+// Leading Zeros are the zeros before a whole number which don't affect the value (e.g. the first three zeros in 000234 and 000230).
+// Examples
+// removeLeadingTrailing("230.000") ➞ "230"
+
+// removeLeadingTrailing("00402") ➞ "402"
+
+// removeLeadingTrailing("03.1400") ➞ "3.14"
+
+// removeLeadingTrailing("30") ➞ "30"
+
+function removeLeadingTrailing(n) {
+    const removeExcess = parseFloat(n)
+    return removeExcess.toString();
+}
+
+// ------------------------------------------------------------
+
+// Create a function to return the amount of potatoes there are in a string.
+
+//     Examples
+// potatoes("potato") ➞ 1
+
+// potatoes("potatopotato") ➞ 2
+
+// potatoes("potatoapple") ➞ 1
+
+function potatoes(str) {
+    const numOfPotato = (str.match(/potato/g) || []).length;
+    return numOfPotato
+}
+
+// ------------------------------------------------------------
+
+// Create a function that returns true if the first array can be nested inside the second.
+
+// arr1 can be nested inside arr2 if:
+
+//     arr1's min is greater than arr2's min.
+//         arr1's max is less than arr2's max.
+//             Examples
+// canNest([1, 2, 3, 4], [0, 6]) ➞ true
+
+// canNest([3, 1], [4, 0]) ➞ true
+
+// canNest([9, 9, 8], [8, 9]) ➞ false
+
+// canNest([1, 2, 3, 4], [2, 3]) ➞ false
+
+function canNest(arr1, arr2) {
+    if (Math.min(...arr1) > Math.min(...arr2)
+        && Math.max(...arr1) < Math.max(...arr2)) {
+        return true
+    } return false
+}
+
+// ------------------------------------------------------------
+
+// Create a method in the Person class which returns how another person's age compares. Given the instances p1, p2 and p3, which will be initialised with the attributes name and age, return a sentence in the following format:
+
+// { other person name } is { older than / younger than / the same age as} me.
+
+//     Examples
+// p1 = Person("Samuel", 24)
+// p2 = Person("Joel", 36)
+// p3 = Person("Lily", 24)
+// p1.compareAge(p2) ➞ "Joel is older than me."
+
+// p2.compareAge(p1) ➞ "Samuel is younger than me."
+
+// p1.compareAge(p3) ➞ "Lily is the same age as me."
+
+class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    compareAge(other) {
+        return this.age < other.age ? `${other.name} is older than me.`
+            : this.age > other.age ? `${other.name} is younger than me.`
+                : this.age === other.age ? `${other.name} is the same age as me.`
+                    : ''
+    }
+}
+
+// ------------------------------------------------------------
+
+// Create a function that takes two strings as arguments and returns the number of times the first string(the single character) is found in the second string.
+
+//     Examples
+// charCount("a", "edabit") ➞ 1
+
+// charCount("c", "Chamber of secrets") ➞ 1
+
+// charCount("b", "big fat bubble") ➞ 4
+
+function charCount(myChar, str) {
+    return [...str].filter(x => x === myChar).length;
+}
+
+// ------------------------------------------------------------
+
