@@ -580,3 +580,91 @@ function ageDifference(fAge, sAge) {
 }
 
 // ------------------------------------------------------------
+
+// Given an array of either entirely odd integers or entirely even integers except for a single Outlier Number.Create a function to return this number.
+
+//     Examples
+// outlierNumber([2, 3, 4]) ➞ 3
+// // 2 and 4 are even numbers.
+// // 3 is an outlier number.
+
+// outlierNumber([1, 2, 3]) ➞ 2
+
+// outlierNumber([4, 1, 3, 5, 9]) ➞ 4
+
+function outlierNumber(arr) {
+    const evens = arr.filter(num => Math.abs(num) % 2 === 0)
+    const odds = arr.filter(num => Math.abs(num) % 2 === 1)
+    if (evens.length > 1) {
+        return odds[0]
+    } return evens[0]
+}
+
+// ------------------------------------------------------------
+
+function countVowels(str) {
+    const regex = /[aeiou]/
+    const vowels = [...str].filter(vowel => vowel.match(regex))
+    return vowels.length
+}
+
+// ------------------------------------------------------------
+
+// Take an array of integers(positive or negative or both) and return the sum of the absolute value of each element.
+
+//     Examples
+// getAbsSum([2, -1, 4, 8, 10]) ➞ 25
+
+// getAbsSum([-3, -4, -10, -2, -3]) ➞ 22
+
+// getAbsSum([2, 4, 6, 8, 10]) ➞ 30
+
+// getAbsSum([-1]) ➞ 1
+
+function getAbsSum(arr) {
+    arr = arr.map(s => Math.abs(s))
+    const reducer = (valueA, valueB) => valueA + valueB
+    return arr.reduce(reducer)
+}
+
+// ------------------------------------------------------------
+
+// Create a function that takes an array of numbers and returns a new array, sorted in ascending order(smallest to biggest).
+
+// Sort numbers array in ascending order.
+// If the function's argument is null, an empty array, or undefined; return an empty array.
+// Return a new array of sorted numbers.
+//     Examples
+// sortNumsAscending([1, 2, 10, 50, 5]) ➞[1, 2, 5, 10, 50]
+
+// sortNumsAscending([80, 29, 4, -95, -24, 85]) ➞[-95, -24, 4, 29, 80, 85]
+
+// sortNumsAscending(null) ➞[]
+
+// sortNumsAscending([]) ➞[]
+
+function sortNumsAscending(arr) {
+    if (arr === [] || arr === null || arr === undefined) {
+        return []
+    } return arr.sort((a, b) => a - b)
+}
+
+// ------------------------------------------------------------
+
+// Create a function that finds the word "bomb" in the given string(not case sensitive).If found, return "Duck!!!", otherwise return "There is no bomb, relax.".
+
+//     Examples
+// bomb("There is a bomb.") ➞ "Duck!!!"
+
+// bomb("Hey, did you think there is a bomb?") ➞ "Duck!!!"
+
+// bomb("This goes boom!!!") ➞ "There is no bomb, relax."
+
+function bomb(str) {
+    return str.toLowerCase().includes("bomb") ? 'Duck!!!'
+        : "There is no bomb, relax."
+}
+
+// ------------------------------------------------------------
+
+
