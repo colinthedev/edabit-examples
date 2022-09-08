@@ -667,4 +667,52 @@ function bomb(str) {
 
 // ------------------------------------------------------------
 
+// Create a function that determines the age difference between spouses in a household. The ages ages in years of the parents and their children are given in an array.
 
+// If there is no difference in age between the parents, return "No age difference between spouses.". Otherwise, return the difference in years. Check the examples for more clarification.
+
+// Examples
+// ageDifference([29, 1, 6, 8, 28]) ➞ "1 year"
+
+// ageDifference([43, 86, 49, 86]) ➞ "No age difference between spouses."
+
+// ageDifference([2, 4, 6, 32, 27]) ➞ "5 years"
+
+function ageDifference(ages) {
+	const sortedAges = ages.sort(function(a,b) {return b-a})
+	const parentsAges = sortedAges.slice(0,2)
+	const ageDiff = parentsAges[0] - parentsAges[1]
+	return parentsAges[0] - parentsAges[1] === 0 ? "No age difference between spouses."
+		: ageDiff > 1 ? `${ageDiff} years`
+			: `${ageDiff} year`
+}
+
+// ------------------------------------------------------------
+
+// Create a function that returns the last value of the last item in an array or string.
+
+// Examples
+// lastItem([0, 4, 19, 34, 50, -9, 2]) ➞ 2
+
+// lastItem("The quick brown fox jumped over the lazy dog") ➞ "g"
+
+// lastItem([]) ➞ undefined
+
+function lastItem(input) {
+	return input.slice(-1)[0] 
+}
+
+// ------------------------------------------------------------
+
+function rev(n) {
+	let split = n.toString().split("");
+	let reverse = split.reverse();
+	return reverse.contains("-") ? reverse.pop().join("")
+		: reverse.join("")
+}
+
+function rev(n) {
+	let split = n.toString().split("");
+	let reverse = split.reverse();
+	return reverse.contains("-") ? reverse.splice(-1,1) : reverse.join("")
+}
